@@ -1,0 +1,30 @@
+#\u9ED8\u8BA4\u4F7F\u7528\u914D\u7F6E
+spring:
+  profiles:
+      active: dev
+  #\u89C6\u56FE\u89E3\u6790\u5668
+  mvc:
+    view:
+     prefix : /
+     suffix : .html
+
+#\u516C\u5171\u914D\u7F6E\u4E0Eprofiles\u9009\u62E9\u65E0\u5173
+#mybatis\u914D\u7F6E
+mybatis:
+  #\u626B\u63CFmapper
+  mapperLocations: classpath:mapper/*.xml
+#\u670D\u52A1\u5668\u7AEF\u53E3\u914D\u7F6E
+server:
+  port: 8080
+#log\u65E5\u5FD7\u914D\u7F6E
+logging:
+  config: classpath:log4j2.yml
+#pageHelper\u5206\u9875\u63D2\u4EF6\u914D\u7F6E
+pagehelper:
+  #helperDialect: mysql #\u6807\u8BC6\u662F\u54EA\u4E00\u79CD\u6570\u636E\u5E93\uFF0C\u8BBE\u8BA1\u4E0A\u5FC5\u987B\u3002
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+  pageSizeZero: true #\u8BBE\u7F6E\u4E3Atrue\u65F6\uFF0C\u5982\u679CpageSize=0\u6216\u8005RowBounds.limit = 0\u5C31\u4F1A\u67E5\u8BE2\u51FA\u5168\u90E8\u7684\u7ED3\u679C
+  defaultCount: false #false\u4E0D\u8FDB\u884C\u603B\u6570\u67E5\u8BE2\uFF0C\u9ED8\u8BA4\u8FDB\u884C\u603B\u6570\u67E5\u8BE2
+  autoRuntimeDialect: true
